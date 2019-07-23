@@ -5,6 +5,7 @@ const Movie = (props) => {
   const [movie, setMovie] = useState();
  
   useEffect(() => {
+    //got data from console.log. gave variable ID exact ID from obj
     const id = props.match.params.id;
 
     // change ^^^ that line and grab the id from the URL
@@ -14,6 +15,7 @@ const Movie = (props) => {
         .get(`http://localhost:5000/api/movies/${id}`)
         .then(response => {
           setMovie(response.data);
+          console.log(response.data)
         })
         .catch(error => {
           console.error(error);

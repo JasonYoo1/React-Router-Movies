@@ -17,9 +17,11 @@ const App = () => {
     <div>
       <SavedList list={savedList} />
       {/* <div>Replace this Div with your Routes!</div> */}
-        <Route path="/" exact render={props => {console.log(props); return <MovieList {...props}/>}} />
-        <Route path="/movies/:id" render={props => {console.log(props); return <Movie {...props}/>}} />
 
+        {/* created path to 'home' aka MoiveList... made prop function to give data from Route Tag to MovieList */}
+        <Route path="/" exact render={props => {console.log(props); return <MovieList {...props}/>}} />
+         {/* created path to link/id... made prop function to give data from Route Tag to Movie from ID*/}
+        <Route path="/movies/:id" render={props => {console.log(props); return <Movie {...props}/>}} />
     </div>
   );
 };
