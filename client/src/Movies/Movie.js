@@ -51,8 +51,14 @@ const Movie = (props) => {
             {star}
           </div>
         ))}
+
       </div>
-      <div className="save-button">Save</div>
+      <div className="save-button"><button className="save-button"
+        onClick={() => props.history.push(`/update-movie/${movie.id}`)}
+        className="md-button"
+      >
+        Edit Item
+      </button></div>
     </div>
   );
 }
